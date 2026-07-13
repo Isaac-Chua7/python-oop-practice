@@ -11,3 +11,10 @@ pet1.descibe()
 
 pet1.update_age(18)
 pet1.descibe
+
+print(f"there are currently {Pet.num_pets} pets")
+if(Pet.is_Animal == True):
+    print("Pets are animals")
+else:
+    print("Pets are not animals")
+
