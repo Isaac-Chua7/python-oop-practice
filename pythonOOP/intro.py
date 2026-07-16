@@ -20,10 +20,10 @@ else:
     print("Pets are not animals")
 
 print()
-print("*********************************************")
+print("*** INHERITANCE ***")
 print()
 
-athlete1 = Basketballer("Luka Doncic", "Basketball", 203)
+athlete1 = Basketballer("Victor Wembanyama", "Basketball", 203)
 athlete2 = Volleyballer("Shoyo Hinata", "Volleyball", 163)
 athlete3 = Soccerer("Lionel Messi", "Soccer", 170)
 
@@ -34,3 +34,9 @@ for a in athletes:
     a.score()
     print()
 
+print()
+print("*** MULTIPLE INHERITANCE ***")
+print()
+
+athlete1.play_defense()
+athlete2.run_play()
