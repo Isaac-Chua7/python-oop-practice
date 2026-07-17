@@ -15,7 +15,7 @@ class Square(Shape):
 
     def describe(self):
         super().describe()
-        print(f"I also have an area of {self.width*self.width} cm^2")
+        print(f"I also have an area of {self.width*self.width} cm²")
 
 
 class Trapezium(Shape):
@@ -27,7 +27,7 @@ class Trapezium(Shape):
     
     def describe(self):
         super().describe()
-        print(f"I also have an area of {(self.top_length+self.bottom_length)/2*self.height} cm^2")
+        print(f"I also have an area of {(self.top_length+self.bottom_length)/2*self.height} cm²")
 
 square = Square("red", True, 6.7)
 square.describe()
