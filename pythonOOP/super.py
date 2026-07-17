@@ -1,12 +1,16 @@
+from abc import ABC, abstractmethod
 
-
-class Shape():
+class Shape(ABC):
     def __init__(self, colour, is_regular):
         self.colour = colour
         self.is_regular = is_regular
 
     def describe(self):
         print(f"I am {self.colour} and I am {"a regular polygon" if self.is_regular else "an irregular polygon"}")
+
+    @abstractmethod
+    def get_area(self):
+        pass
     
 class Square(Shape):
     def __init__(self, colour, is_regular, width):
@@ -15,7 +19,10 @@ class Square(Shape):
 
     def describe(self):
         super().describe()
-        print(f"I also have an area of {self.width*self.width} cm²")
+        print(f"I also have an area of {self.get_area()} cm²")
+
+    def get_area(self):
+        return self.width**2
 
 
 class Trapezium(Shape):
@@ -27,10 +34,18 @@ class Trapezium(Shape):
     
     def describe(self):
         super().describe()
-        print(f"I also have an area of {(self.top_length+self.bottom_length)/2*self.height} cm²")
+        print(f"I also have an area of {self.get_area()} cm²")
+
+    def get_area(self):
+        return (self.top_length+self.bottom_length)/2*self.height
 
 square = Square("red", True, 6.7)
 square.describe()
 
 trap = Trapezium("blue", True, height=10, top_length=12, bottom_length=3)
 trap.describe()
+
+shapes = [Square("green", True, 1.4141), Trapezium("orange", True, height=6.7, top_length=8, bottom_length=12)]
+
+for s in shapes:
+    print(f"{s.get_area():.2f}")
